@@ -109,33 +109,37 @@
             <form class="formulario">
                 <fieldset>
                     <legend>Contactame llenando todos los campos</legend>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input class="input-text" type="text" placeholder="Tu nombre">
+                        </div>
 
-                    <div>
-                        <label>Nombre</label>
-                        <input type="text" placeholder="Tu nombre">
+                        <div class="campo">
+                            <label>Telefono</label>
+                            <input class="input-text" type="tel" placeholder="Tu telefono">
+                        </div>
+
+                        <div class="campo">
+                            <label>Correo</label>
+                            <input class="input-text" type="email" placeholder="Tu Email">
+                        </div>
+
+                        <div class="campo">
+                            <label>Mensaje</label>
+                            <textarea class="input-text"></textarea>
+                        </div>
                     </div>
 
-                    <div>
-                        <label>Telefono</label>
-                        <input type="tel" placeholder="Tu telefono">
+                    <div class="alinear-derecha flex">
+                        <input class="boton w-100" type="submit" value="Enviar">
                     </div>
-
-                    <div>
-                        <label>Correo</label>
-                        <input type="email" placeholder="Tu Email">
-                    </div>
-
-                    <div>
-                        <label>Mensaje</label>
-                        <textarea></textarea>
-                    </div>
-
-                    <button type="submit" value="Enviar">Enviar</button>
+                    
                 </fieldset>
             </form>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <p>Todos los derechos reservados Enzo Gutierrez</p>
     </footer>
 
