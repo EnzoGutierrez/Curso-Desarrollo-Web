@@ -50,7 +50,77 @@ console.log(5);
 
 //Seleccionar elementos y asociarles un evento
 
-const btnEnviar = document.querySelector(".boton--primario");
-btnEnviar.addEventListener("click", function(){
-    console.log("enviar")
-})
+// const btnEnviar = document.querySelector(".boton--primario");
+// btnEnviar.addEventListener("click", function(e){
+//     e.preventDefault();
+//     console.log("enviar");
+// })
+
+//Eventos de los Inputs y Textareas
+
+const datos = {
+    nombre: "",
+    email: "",
+    menasje: ""
+}
+
+const nombreInput = document.querySelector("#nombre");
+const correoInput = document.querySelector("#email");
+const mensajeInput = document.querySelector("#mensaje");
+const formulario = document.querySelector(".formulario");
+
+nombre.addEventListener("input", leertexto);
+email.addEventListener("input", leertexto);
+mensaje.addEventListener("input", leertexto);
+
+function leertexto(e){
+    //console.log(e.target.value)
+
+    datos[e.target.id] = e.target.value;
+
+    console.log(datos);
+}
+
+//Evento de submit
+
+formulario.addEventListener("submit", function(evento){
+    evento.preventDefault();
+
+    //Validar formulario
+
+    const { nombre, email, mensaje} = datos;
+
+    if (nombre === "" || email === "" || mensaje === ""){
+        mostarAlerta("Todos los campos son obligatorios", true);
+        return;
+    }
+
+    mostarAlerta("El formulario fue enviado correctamente")
+
+    console.log(nombre);
+    console.log(email);
+    console.log(mensaje);
+
+    console.log("Enviando Formulario"); 
+});
+
+function mostarAlerta(mensaje, error = null){
+    const alerta =document.createElement("P");
+    alerta.textContent = mensaje;
+
+    if(error){
+        alerta.classList.add("error");
+    }
+    else{
+        alerta.classList.add("enviado");
+    }
+
+    formulario.appendChild(alerta);
+
+
+    //Desaparezca luego de 5 segundos
+
+    setTimeout(() => {
+        alerta.remove();
+    }, 5000);
+}
