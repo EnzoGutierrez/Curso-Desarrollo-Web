@@ -77,7 +77,7 @@ async function mostrarServicios() {
 
         const url = 'http://localhost:3000/servicios.php';
 
-        const resultado = await fetch(url);
+        const resultado = await fetch(url, {mode: 'no-cors'});
   
         const db = await resultado.json();
         console.log(db);
